@@ -1,0 +1,16 @@
+/**index.wxss**/
+.jobListClass {
+  border-top: solid 1px #C0C0C0;
+  display: block;
+  padding: 5rpx;
+  height: 70rpx;
+}
+
+.headerClass {
+  height: 50rpx;
+}
+
+.mainScrollClass{
+  border: solid 1px #000;
+  height: 1000rpx;
+}
