@@ -1,8 +1,19 @@
 <!-- This is our View -->
-<scroll-view class='mainScrollClass' scroll-y style="width: 100%" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}"> 
-  <view class='headerClass'>全部信息</view>
-  <view wx:for="{{myJobList}}" wx:key="{{item}}">
-    <view class='jobListClass'>{{item}}</view>
-  </view>
+<view class='headerClass'>
+  <view style='width: 110rpx; font-size:30rpx; text-align:center;'>联系人</view>
+  <view style='width: 500rpx; font-size:30rpx; margin-left:10rpx;'>工作信息</view>
+  <view style='width: 100rpx; font-size:30rpx; text-align:center;'>有效期</view>
+</view>
+<scroll-view class='mainScrollClass' scroll-y style="width: 100%" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+  <block wx:for="{{myJobList}}" wx:key="{{item}}">
+    <view class='jobListClass'>
+      <image class='headIconClass' src="../../images/home.png"></image>
+      <view class='jobBoxClass'>
+        <view class='positionNameClass'>高级工程师</view>
+        <view class='positionCompanyClass'>测试科技有限公司</view>
+        <view class='positionSalaryClass'>月薪:20K</view>      
+      </view>
+      <view class='dateClass'>2018-01-01</view>
+    </view>
+  </block>
 </scroll-view>
-

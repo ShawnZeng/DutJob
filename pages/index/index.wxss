@@ -1,16 +1,57 @@
 /**index.wxss**/
 .jobListClass {
   border-top: solid 1px #C0C0C0;
-  display: block;
+  display: flex;
   padding: 5rpx;
-  height: 70rpx;
+  height: 100rpx;
 }
 
 .headerClass {
   height: 50rpx;
+  display: flex;
 }
 
 .mainScrollClass{
-  border: solid 1px #000;
+  border-top: solid 1px #000;
   height: 1000rpx;
+}
+
+.jobBoxClass{
+  margin-left: 10rpx;
+  display: flex;
+  flex-direction: column;
+  align-content: space-around; 
+  width: 500rpx;
+}
+
+.headIconClass{
+  display: inline-block;
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.positionNameClass{
+  display: block;
+  font-size:30rpx;
+  font-weight: bold;
+  color: blue;
+}
+
+.positionCompanyClass{
+  display: block;
+  font-size:20rpx;  
+  color: blue;   
+}
+
+.positionSalaryClass{
+  display: block;
+  position: relative;
+  font-size:20rpx;
+  color: blue;
+}
+
+.dateClass{
+  font-size:20rpx;
+  display:flex;
+  align-items:center;
 }
