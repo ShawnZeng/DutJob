@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    myJobList: ['test1','test2','test3','test4','test5','test6','test7','test8','test9']
+    myJobList: ['test1','test2','test3','test4','test5','test6','test7','test8','test9','test10','test11','test12','test13','哈哈哈'],
   },
 
   upper: function (e) {
@@ -19,27 +19,20 @@ Page({
   scroll: function (e) {
     console.log(e)
   },
-  tap: function (e) {
-    for (var i = 0; i < order.length; ++i) {
-      if (order[i] === this.data.toView) {
-        this.setData({
-          toView: order[i + 1]
-        })
-        break
-      }
-    }
-  },
-  tapMove: function (e) {
-    this.setData({
-      scrollTop: this.data.scrollTop + 10
-    })
-  },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    var that = this;
+    //获取系统的参数，scrollHeight数值,微信必须要设置style:height才能监听滚动事件
+    wx.getSystemInfo({
+      success: function (res) {
+        that.setData({
+          scrollHeight: parseInt(res.windowHeight)
+        })
+      }
+    });
   },
 
   /**

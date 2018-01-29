@@ -4,12 +4,12 @@
   <view style='width: 500rpx; font-size:30rpx; margin-left:10rpx;'>工作信息</view>
   <view style='width: 100rpx; font-size:30rpx; text-align:center;'>有效期</view>
 </view>
-<scroll-view class='mainScrollClass' scroll-y style="width: 100%" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+<scroll-view class='mainScrollClass' scroll-y="true" catchscrolltoupper="upper" bindscrolltolower="lower" catchscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
   <block wx:for="{{myJobList}}" wx:key="{{item}}">
-    <view class='jobListClass'>
+    <view id="{{item}}" class='jobListClass'>
       <image class='headIconClass' src="../../images/home.png"></image>
       <view class='jobBoxClass'>
-        <view class='positionNameClass'>高级工程师</view>
+        <view class='positionNameClass'>{{item}}</view>
         <view class='positionCompanyClass'>测试科技有限公司</view>
         <view class='positionSalaryClass'>月薪:20K</view>      
       </view>
