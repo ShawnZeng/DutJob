@@ -7,7 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    myJobList: ['test1','test2','test3','test4','test5','test6','test7','test8','test9','test10','test11','test12','test13','哈哈哈'],
+    myJobList: ['test1','test2','test3','test4','test5','test6','test7','test8','test9','test10','test11','test12','test13','哈哈哈','啦啦啦','哒哒哒'],
+    scrollHeight:0,
   },
 
   upper: function (e) {
@@ -20,19 +21,32 @@ Page({
     console.log(e)
   },
 
+  //弹出框蒙层截断touchmove事件
+
+  onTouchMove: function onPreventTouchMove(e) {
+    console.log(e)
+    //阻止弹出层滑动事件，空函数，不做任何处理
+
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     var that = this;
-    //获取系统的参数，scrollHeight数值,微信必须要设置style:height才能监听滚动事件
     wx.getSystemInfo({
       success: function (res) {
-        that.setData({
-          scrollHeight: parseInt(res.windowHeight)
-        })
+        console.info(res.windowHeight);
+        wx.createSelectorQuery().select('#VIEW1').boundingClientRect(function (rect) {
+          console.log(rect)
+          that.setData({ 
+          scrollHeight: res.windowHeight - rect.height - 1
+          })
+        }).exec();
       }
-    });
+    });      
+
+    
   },
 
   /**

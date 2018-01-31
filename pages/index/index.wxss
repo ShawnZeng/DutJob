@@ -1,5 +1,12 @@
 /**index.wxss**/
 
+/**去除滚动条**/
+::-webkit-scrollbar{
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
 .headerGapClass{
   height: 20px;
   background: lightblue;
@@ -11,14 +18,11 @@
   background: #33ccff;
   color: white;
   width: 100%;
-
 }
 
 .mainScrollClass{
   border-top: solid 1px #000;
   width: 100%;
-  height: 1162rpx;
-  overflow:scroll;
   white-space: nowrap;
 }
 
