@@ -1,8 +1,8 @@
 <!-- This is our View -->
 <view class='mainClass'>
   <view class='headerClass' id='VIEW1'>
-    <view style='width: 110rpx; font-size:30rpx; text-align:center;'>联系人</view>
-    <view style='width: 500rpx; font-size:30rpx; margin-left:10rpx;'>工作信息</view>
+    <view style='width: 200rpx; font-size:30rpx; text-align:center;'>联系人</view>
+    <view style='width: 380rpx; font-size:30rpx; margin-left:10rpx;'>工作信息</view>
     <view style='width: 100rpx; font-size:30rpx; text-align:center;'>有效期</view>
   </view>
   <scroll-view id="SCROLL1" class='mainScrollClass' scroll-y="true" style="height:{{scrollHeight}}px;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" catchtouchmove="onPreventTouchMove">
