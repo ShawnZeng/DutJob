@@ -28,5 +28,9 @@
 			"current": -1,
 			"list": []
 		}
-	}
+	},
+	"client": "./",
+	"svr": "./",
+	"miniprogramRoot": "./",
+	"qcloudRoot": "./server"	
 }
