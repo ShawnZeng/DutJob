@@ -1,6 +1,7 @@
 const CONF = {
     port: '5757',
     rootPathname: '',
+    
 
     // 微信小程序 App ID
     appId: '',
@@ -20,7 +21,7 @@ const CONF = {
         host: 'localhost',
         port: 3306,
         user: 'root',
-        db: 'cAuth',
+        db: 'myJobDB',
         pass: 'wx2c74bce9fad6c225',
         char: 'utf8mb4'
     },
