@@ -7,7 +7,7 @@
   </view>
   <scroll-view id="SCROLL1" class='mainScrollClass' scroll-y="true" style="height:{{scrollHeight}}px;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" catchtouchmove="onPreventTouchMove">
     <block wx:for="{{myJobList}}" wx:key="{{item}}">
-      <view id="{{item}}" class='jobListClass'>
+      <view id="{{item}}" class='jobListClass' bindtap="click">
         <image class='headIconClass' src="../../images/home.png"></image>
         <view class='jobBoxClass'>
           <view class='positionNameClass'>{{item}}</view>
