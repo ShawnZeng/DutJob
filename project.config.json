@@ -11,6 +11,10 @@
 	"libVersion": "1.7.2",
 	"appid": "wx2c74bce9fad6c225",
 	"projectname": "%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F",
+	"client": "./",
+	"svr": "./",
+	"miniprogramRoot": "./",
+	"qcloudRoot": "./server",
 	"condition": {
 		"search": {
 			"current": -1,
@@ -28,9 +32,5 @@
 			"current": -1,
 			"list": []
 		}
-	},
-	"client": "./",
-	"svr": "./",
-	"miniprogramRoot": "./",
-	"qcloudRoot": "./server"	
+	}
 }

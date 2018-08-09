@@ -33,6 +33,6 @@ router.get('/message', controllers.message.get)
 router.post('/message', controllers.message.post)
 
 // Job list Js
-router.get('/myJob', controllers.myJob)
+//router.get('/myJob', controllers.myJob)
 
 module.exports = router
