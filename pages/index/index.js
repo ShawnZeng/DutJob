@@ -29,6 +29,7 @@ Page({
 
   },
 
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -36,9 +37,9 @@ Page({
     var that = this;
     wx.getSystemInfo({
       success: function (res) {
-        console.info(res.windowHeight);
+        //console.info(res.windowHeight);
         wx.createSelectorQuery().select('#VIEW1').boundingClientRect(function (rect) {
-          console.log(rect)
+          //console.log(rect)
           that.setData({ 
           scrollHeight: res.windowHeight - rect.height - 1
           })
@@ -61,19 +62,25 @@ Page({
       method: "GET",//get为默认方法/POST
       success: function (res) {
         console.log(res.data);//res.data相当于ajax里面的data,为后台返回的数据
-        　　　　　　that.setData({//如果在sucess直接写this就变成了wx.request()的this了.必须为getdata函数的this,不然无法重置调用函数
+        var len = res.data.length;
+        const result = new Array();
+        for(var x=0;x++;x< len)
+        {
+          result[x] = res.data[x].JOB_NAME;
+        }
+        　　　　　　that.setData(       
+                          {//如果在sucess直接写this就变成了wx.request()的this了.必须为getdata函数的this,不然无法重置调用函数
 
-                        data: res.data.result
-
+                          myJobList: res.data
 
         　　　　　　　　　　})
 
       },
       fail: function (err) { },//请求失败
-      complete: function () { }//请求完成后执行的函数
+      complete: function () {}//请求完成后执行的函数
     })
   },
-
+  
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -94,7 +101,7 @@ Page({
   onHide: function () {
     
   },
-
+  
   /**
    * 生命周期函数--监听页面卸载
    */
