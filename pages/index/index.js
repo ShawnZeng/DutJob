@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    myJobList: ['test1','test2','test3','test4','test5','test6','test7','test8','test9','test10','test11','test12','test13','哈哈哈','啦啦啦','哒哒哒'],
+    myJobList: [],
     scrollHeight:0,
   },
 
@@ -62,22 +62,15 @@ Page({
       method: "GET",//get为默认方法/POST
       success: function (res) {
         console.log(res.data);//res.data相当于ajax里面的data,为后台返回的数据
-        var len = res.data.length;
-        const result = new Array();
-        for(var x=0;x++;x< len)
-        {
-          result[x] = res.data[x].JOB_NAME;
-        }
         　　　　　　that.setData(       
                           {//如果在sucess直接写this就变成了wx.request()的this了.必须为getdata函数的this,不然无法重置调用函数
 
-                          myJobList: res.data
+                          myJobList: res.data.data
 
         　　　　　　　　　　})
-
       },
       fail: function (err) { },//请求失败
-      complete: function () {}//请求完成后执行的函数
+      complete: function () { console.log(that.myJobList)}//请求完成后执行的函数
     })
   },
   
@@ -131,11 +124,27 @@ Page({
   },
 
   click:function(e){
-    //console.log('-------------click', e);
+    //console.log('-------------click', e.currentTarget.id);
+    var fileStr = e.currentTarget.id + '.wxml';
+    
+
+    var len = this.data.myJobList.length;
+    for(var x=0;x<len;x++)
+    {
+      if (this.data.myJobList[x].JOB_ID == e.currentTarget.id)
+      {
+        console.log(this.data.myJobList[x]);
+        wx.setStorage({
+          key: 'jobDetail',
+          data: this.data.myJobList[x].DESCRIPTION,
+        })
+        break;
+      }
+    }
+
     wx.navigateTo({
-      url: '../detail/detail',
+      url: '../detail/detail?id=' + e.currentTarget.id,
     })    
   }
 
 })
-

@@ -1,5 +1,3 @@
-<view class='mainDetail'>
-校友公司招聘——招聘PCB硬件研发工程师一名，待遇优厚。
-工作地点在旅顺，有班车接送。
-有意的校友请与校友刘星 15382280670联系。
-</view>
+<text class='mainDetail'>
+{{jobDetail}}
+</text>

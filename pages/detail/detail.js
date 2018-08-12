@@ -1,9 +1,29 @@
-var app = getApp()
-Page({
-  data: {
 
+var jobDatalist = require("../index/index");
+
+
+Page({
+
+  data: {
+    jobDetail: [],
   },
+
   onLoad: function (option) {
-    //console.log('------------参数', option);
+    
+    var that = this;
+    console.log("print data")    
+    wx.getStorage({
+      key: 'jobDetail',
+      success: function (res) {
+        that.setData(
+          {
+
+            jobDetail: res.data
+
+          })
+      }
+    })    
+
   }
+
 })

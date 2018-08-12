@@ -6,6 +6,7 @@ module.exports = async ctx => {
   var res = await mysql('myJobDB').select('*').from('JOB_INFO')
 
   console.log(res)
+  
 
   ctx.state.data = res
 }

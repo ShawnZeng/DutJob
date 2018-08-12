@@ -7,14 +7,14 @@
   </view>
   <scroll-view id="SCROLL1" class='mainScrollClass' scroll-y="true" style="height:{{scrollHeight}}px;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" catchtouchmove="onPreventTouchMove">
     <block wx:for="{{myJobList}}" wx:key="{{item}}">
-      <view id="{{item}}" class='jobListClass' bindtap="click">
+      <view id="{{item.JOB_ID}}" class='jobListClass' bindtap="click">
         <image class='headIconClass' src="../../images/home.png"></image>
         <view class='jobBoxClass'>
-          <view class='positionNameClass'>{{item}}</view>
-          <view class='positionCompanyClass'>曾洋科技有限公司</view>
-          <view class='positionSalaryClass'>月薪:20K</view>      
+          <view class='positionNameClass'>{{item.JOB_NAME}}</view>
+          <view class='positionCompanyClass'>{{item.COMP_NAME}}</view>
+          <view class='positionSalaryClass'>月薪: {{item.SALARY}}</view>      
         </view>
-        <view class='dateClass'>2018-01-01</view>
+        <view class='dateClass'>{{item.VALID_DATE}}</view>
       </view>
     </block>
   </scroll-view>
