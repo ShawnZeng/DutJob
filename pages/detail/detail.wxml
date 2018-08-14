@@ -1,3 +1,9 @@
-<text class='mainDetail'>
-{{jobDetail}}
-</text>
+<view class='mainDetailTitleClass'>职位名称</view>
+<text class='mainDetailClass'>{{data.JOB_NAME}}</text>
+<view class='mainDetailTitleClass'>职位地点: {{data.JOB_LOCATION}}</view>
+<view class='mainDetailTitleClass'>职位描述</view>
+<text class='mainDetailClass'>{{data.DESCRIPTION}}</text>
+<view class='mainDetailTitleClass'>联系人</view>
+<text class='mainDetailClass'>{{data.CONT_NAME}}</text>
+<view class='mainDetailClass' wx:if="{{typeof(data.PHONE) != 'undefined'}}">电话: {{data.PHONE}}</view>
+<view class='mainDetailClass' wx:if="{{typeof(data.EMAIL) != 'undefined'}}">EMAIL: {{data.EMAIL}}</view>

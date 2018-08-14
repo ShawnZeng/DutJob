@@ -5,25 +5,31 @@ var jobDatalist = require("../index/index");
 Page({
 
   data: {
-    jobDetail: [],
   },
 
   onLoad: function (option) {
     
     var that = this;
-    console.log("print data")    
+        
     wx.getStorage({
       key: 'jobDetail',
       success: function (res) {
         that.setData(
           {
 
-            jobDetail: res.data
+            data: res.data
 
           })
       }
     })    
 
-  }
+  },
+
+    /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+    console.log('in detail.js onUnload')
+  },
 
 })

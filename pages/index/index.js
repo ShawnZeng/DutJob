@@ -65,7 +65,7 @@ Page({
         　　　　　　that.setData(       
                           {//如果在sucess直接写this就变成了wx.request()的this了.必须为getdata函数的this,不然无法重置调用函数
 
-                          myJobList: res.data.data
+                            myJobList: res.data.data
 
         　　　　　　　　　　})
       },
@@ -136,7 +136,7 @@ Page({
         console.log(this.data.myJobList[x]);
         wx.setStorage({
           key: 'jobDetail',
-          data: this.data.myJobList[x].DESCRIPTION,
+          data: this.data.myJobList[x],
         })
         break;
       }

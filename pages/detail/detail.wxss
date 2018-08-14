@@ -1,1 +1,16 @@
 /* pages/detail/detail.wxss */
+
+.mainDetailTitleClass {
+  margin-left: 10rpx;
+  font-size: 17pt;
+  font-weight:bold;
+  display: block;
+  color: Black;  
+}
+
+.mainDetailClass {
+  margin-left: 10rpx;
+  font-size: 14pt;
+  display: block;
+  color: Black;  
+}
